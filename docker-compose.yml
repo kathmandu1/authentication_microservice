@@ -52,7 +52,7 @@ services:
             MYSQL_DATABASE: authorization
         restart: unless-stopped
         ports:
-            - "7003:3306"
+            - "9003:3306"
         networks:
             - merodiscount
 
@@ -99,7 +99,7 @@ services:
         # links:
         #     - db
         ports:
-            - "7001:8080"
+            - "9001:8080"
 
         restart: unless-stopped
         networks:
@@ -108,8 +108,8 @@ services:
     mail:
         image: maildev/maildev
         ports:
-            - "7025:1025"
-            - "7002:1080"
+            - "1025:1025"
+            - "9002:1080"
         restart: unless-stopped
         networks:
             - merodiscount
@@ -201,7 +201,7 @@ services:
         # expose:
         #     - "6001"
         ports:
-         - "5001:6001"
+         - "6001:6001"
         depends_on:
             - app
         networks:
