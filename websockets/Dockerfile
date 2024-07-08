@@ -75,7 +75,7 @@ FROM php:8.1.13-fpm-alpine
 ARG user
 ARG uid
 
-LABEL Description="Base setup for IAmsterdam survey portal development."
+LABEL Description="Base setup for Auth Services."
 
 RUN apk add --update --no-cache \
     $PHPIZE_DEPS \
