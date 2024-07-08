@@ -49,10 +49,10 @@ services:
             - .docker/mysql/init/init.sql:/usr/local/etc/mysql/init.sql
         environment:
             MYSQL_ROOT_PASSWORD: '@dmin@123'
-            MYSQL_DATABASE: authorization
+            MYSQL_DATABASE: search-task
         restart: unless-stopped
         ports:
-            - "9003:3306"
+            - "7003:3306"
         networks:
             - merodiscount
 
@@ -99,7 +99,7 @@ services:
         # links:
         #     - db
         ports:
-            - "9001:8080"
+            - "7001:8080"
 
         restart: unless-stopped
         networks:
@@ -108,8 +108,8 @@ services:
     mail:
         image: maildev/maildev
         ports:
-            - "1025:1025"
-            - "9002:1080"
+            - "7025:1025"
+            - "7002:1080"
         restart: unless-stopped
         networks:
             - merodiscount
@@ -201,7 +201,7 @@ services:
         # expose:
         #     - "6001"
         ports:
-         - "6001:6001"
+         - "5001:6001"
         depends_on:
             - app
         networks:
