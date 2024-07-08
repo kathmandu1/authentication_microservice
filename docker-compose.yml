@@ -49,7 +49,7 @@ services:
             - .docker/mysql/init/init.sql:/usr/local/etc/mysql/init.sql
         environment:
             MYSQL_ROOT_PASSWORD: '@dmin@123'
-            MYSQL_DATABASE: search-task
+            MYSQL_DATABASE: authorization
         restart: unless-stopped
         ports:
             - "7003:3306"
